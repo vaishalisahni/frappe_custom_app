@@ -84,6 +84,9 @@ doc_events = {
     },
     "Purchase Invoice": {
         "validate": "custom_app.api.purchase_invoice.validate_pi_items"
+    },
+    "Attendance Request": {
+        "on_update": "custom_app.api.attendance_request.share_with_leave_approver"
     }
 }
 
@@ -97,6 +100,7 @@ doctype_js = {
     "Employee": "public/js/academic_level_selection.js",
     "Material Request": "public/js/material_request.js",
     "Expense Claim": "public/js/expense_claim.js",
+    "Supplier Quotation": "public/js/supplier_quotation.js",
 }
 
 scheduler_events = {

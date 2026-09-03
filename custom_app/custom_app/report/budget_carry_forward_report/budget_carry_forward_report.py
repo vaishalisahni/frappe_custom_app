@@ -72,19 +72,19 @@ def get_columns(months):
 
     for month in months[:-1]:
         columns.append({
-            "label": _(month["month_name"]),
+            "label": _(f"{month['month_name']} Budget / Utilised"),
             "fieldname": f"{month['month_name'].lower()}_utilised",
             "fieldtype": "Currency",
-            "width": 110,
+            "width": 160,
         })
 
     if months:
         current = months[-1]["month_name"]
         columns.append({
-            "label": _(f"{current} Total Budget"),
+            "label": _(f"{current} Cumulative Budget"),
             "fieldname": f"{current.lower()}_available",
             "fieldtype": "Currency",
-            "width": 150,
+            "width": 175,
         })
         columns.append({
             "label": _(f"{current} Utilised"),
